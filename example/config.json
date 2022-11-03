@@ -1,0 +1,7 @@
+{
+  "drobo": "drobohost:5000",
+  "poll_seconds": 5,
+  "broker": "brokerhost:1883",
+  "username": "user",
+  "password": "example"
+}

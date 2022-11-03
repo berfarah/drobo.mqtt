@@ -1,0 +1,22 @@
+[Unit]
+Description=Drobo MQTT Server
+ConditionPathExists=/home/ber
+After=network.target
+
+[Service]
+Type=simple
+User=ber
+Group=ber
+
+WorkingDirectory=/home/ber
+ExecStart=/home/ber/drobo.mqtt -c /home/ber/drobo.conf
+
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=drobomqtt
+
+Environment="PATH=/usr/bin:/bin:/usr/sbin:/sbin:./usr/sbin:/sbin:/usr/local/bin"
+Environment="LD_LIBRARY_PATH=/usr/local/lib"
+
+[Install]
+WantedBy=multi-user.target
